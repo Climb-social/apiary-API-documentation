@@ -5,12 +5,15 @@ HOST: http://app.climb.social/api/
 
 A super-simple public service for getting content out of Climb.
 
-## Collection [/collections/{collection_id}{?since}{?max}{?callback}]
+# Group Collections
 
 Collections are the individual feeds you make within Climb. The represent different hashtags, users and social networks all in one place.
 
+## Collection [/collections/{collection_id}{?since}{?max}{?callback}]
+
 + Parameters
     + collection_id (string, required) - ID of the Climb collection you want to pull in.
+
     + since (long, optional) - Timestamp you'd like to collect published items from.
 
         Sometimes you only want gather the approved items from a certain moment in time.    
@@ -22,9 +25,10 @@ Collections are the individual feeds you make within Climb. The represent differ
     + callback (JavaScript function, optional) - Function to call if you want to make a `JSONP` request.
 
 
-## Approved items in collection [GET]
+### Approved items in collection [GET]
 
 Returns a list of items which have been moderated and approved within the Climb admin.
+
 
 + Response 200 (application/json)
 
