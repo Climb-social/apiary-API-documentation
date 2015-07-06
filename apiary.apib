@@ -7,7 +7,7 @@ A super-simple public service for getting content out of Climb.
 
 # Group Collections
 
-Collections are the individual feeds you make within Climb. The represent different hashtags, users and social networks all in one place.
+Collections are the individual feeds you make within Climb. They represent different hashtags, users and social networks all in one place.
 
 ## Collection [/collections/{collection_id}{?since}{?max}{?callback}]
 
@@ -28,6 +28,13 @@ Collections are the individual feeds you make within Climb. The represent differ
 ### Approved items in collection [GET]
 
 Returns a list of items which have been moderated and approved within the Climb admin.
+
+Each item in the list includes:
+- A reference to the Climb collection via the `collection_id` attribute
+- `source_type` describes social network where the item was posted
+- If the item includes an image, the URL and size attributes are included in `image`
+- The `message` attrbute includes the text in the body of the item
+- Information about the author is described in the `author` attribute
 
 
 + Response 200 (application/json)
