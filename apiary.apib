@@ -13,7 +13,7 @@ Collections are the individual feeds you make within Climb. They represent diffe
 
 + Parameters
     + collection_id (string, required) - ID of the Climb collection you want to pull in.
-
+    
     + since (long, optional) - Timestamp you'd like to collect published items from.
 
         Sometimes you only want gather the approved items from a certain moment in time.    
@@ -30,7 +30,6 @@ Collections are the individual feeds you make within Climb. They represent diffe
 Returns a list of items which have been moderated and approved within the Climb admin.
 
 Each item in the list includes:
-- A reference to the Climb collection via the `collection_id` attribute
 - `source_type` describes social network where the item was posted
 - If the item includes an image, the URL and size attributes are included in `image`
 - The `message` attrbute includes the text in the body of the item
