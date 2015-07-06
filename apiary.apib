@@ -26,3 +26,27 @@ Returns a list of items which have been moderated and approved within the Climb 
 + Response 200 (application/json)
 
 
+            [
+                {
+                    collection_id: string,
+                    source_type: string  (enum:{instagram,twitter,facebook,anything}),
+                    video_url: string,
+                    timestamp: long,
+                    image: {
+                        url: string,
+                        width: int,
+                        height: int,
+                    },
+                    message: string,
+                    author: {
+                        picture: string,
+                        name: string,
+                        username: string,
+                        link: string,
+                        followers_count: int
+                    }
+                },
+                
+                ...
+            ]
+
