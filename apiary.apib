@@ -5,7 +5,7 @@ HOST: http://app.climb.social/api/
 
 A super-simple public service for getting content out of Climb.
 
-## Collections [/collections/{collection_id}]
+## Collections [/collections/{collection_id}{?since}{?max}]
 
 Collections are the individual feeds you make within Climb.
 
@@ -14,35 +14,15 @@ Collections are the individual feeds you make within Climb.
 Returns a list of items which have been moderated and approved in the Climb admin.
 
 + Parameters
-    + collection_id (number) - ID of the Climb collection you want to pull in.
+    + collection_id (string, required) - ID of the Climb collection you want to pull in.
+    + since (long, optional) - Timestamp you'd like to collect published items from.
 
+        Sometimes you only want gather the approved items from a certain moment in time.    
+
+    + max (long, optional) - The timestamp you'd like to collect published items until.
+    
+        Sometimes you may want to collect all approve items up to a point in time.
 
 + Response 200 (application/json)
 
-    [
-        {
-            "question": "Favourite programming language?",
-            "published_at": "2014-11-11T08:40:51.620Z",
-            "url": "/questions/1",
-            "choices": [
-                {
-                    "choice": "Swift",
-                    "url": "/questions/1/choices/1",
-                    "votes": 2048
-                }, {
-                    "choice": "Python",
-                    "url": "/questions/1/choices/2",
-                    "votes": 1024
-                }, {
-                    "choice": "Objective-C",
-                    "url": "/questions/1/choices/3",
-                    "votes": 512
-                }, {
-                    "choice": "Ruby",
-                    "url": "/questions/1/choices/4",
-                    "votes": 256
-                }
-            ]
-        }
-    ]
 
