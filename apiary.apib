@@ -9,16 +9,16 @@ A super-simple public service for getting content out of Climb.
 
 Collections are the individual feeds you make within Climb. They represent different hashtags, users and social networks all in one place.
 
-## Collection [/collections/{collection_id}{?since}{?max}{?callback}]
+## Collection [/collections/{collection_id}{?min_id}{?max_id}{?callback}]
 
 + Parameters
     + collection_id (string, required) - ID of the Climb collection you want to pull in.
     
-    + since (long, optional) - Timestamp you'd like to collect published items from.
+    + min_id (string, optional) - ID of the latest item you received from the endpoint.
 
-        Sometimes you only want gather the approved items from a certain moment in time.    
+        Useful for polling: use this parameter to get all subsequently approved items.
 
-    + max (long, optional) - The timestamp you'd like to collect published items until.
+    + max_id (string, optional) - ID of the latest item you want to receive.
     
         Sometimes you may want to collect all approve items up to a point in time.
 
