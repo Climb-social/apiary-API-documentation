@@ -1,25 +1,29 @@
 FORMAT: 1A
 HOST: http://app.climb.social/api/v1/
 
-# Climb API
+# Climb.social client libraries
 
-A super-simple public service for getting content out of Climb.
+Client libraries are available for [Angular.js](https://github.com/Climb-social/angular-climb) and [React.js](https://github.com/Climb-social/react-climb-social)
+
+# Climb.social REST API
+
+A super-simple public service for getting content out of Climb.social.
 
 # Group Collections
 
-Collections are the individual feeds you make within Climb. They represent different hashtags, users and social networks all in one place.
+Collections are the individual feeds you make within Climb.social. They represent different hashtags, users and social networks all in one place.
 
 ## Collection [/collections/{collection_id}{?min_id}{?max_id}{?callback}]
 
 + Parameters
-    + collection_id (string, required) - ID of the Climb collection you want to pull in.
-    
+    + collection_id (string, required) - ID of the Climb.social collection you want to pull in.
+
     + min_id (string, optional) - ID of the latest item you received from the endpoint.
 
         Useful for polling: use this parameter to get all subsequently approved items.
 
     + max_id (string, optional) - ID of the latest item you want to receive.
-    
+
         Sometimes you may want to collect all approve items up to a point in time.
 
     + callback (JavaScript function, optional) - Function to call if you want to make a `JSONP` request.
@@ -27,12 +31,12 @@ Collections are the individual feeds you make within Climb. They represent diffe
 
 ### Approved items in collection [GET]
 
-Returns a list of items which have been moderated and approved within the Climb admin.
+Returns a list of items which have been moderated and approved within the Climb.social admin.
 
 Each item in the list includes:
 - `source_type` describes social network where the item was posted
 - If the item includes an image, the URL and size attributes are included in `image`
-- The `message` attrbute includes the text in the body of the item
+- The `message` attribute includes the text in the body of the item
 - Information about the author is described in the `author` attribute
 
 
